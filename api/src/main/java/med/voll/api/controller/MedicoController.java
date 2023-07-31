@@ -1,7 +1,5 @@
 package med.voll.api.controller;
 
-import java.util.List;
-
 import jakarta.validation.Valid;
 import med.voll.api.medicos.DadosCadastroMedico;
 import med.voll.api.medicos.DadosListagemMedico;
