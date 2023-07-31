@@ -23,5 +23,6 @@ public class PacienteController {
 	public void cadastrarPacientes(@RequestBody @Valid DadosCadastroPaciente dados){
 		repository.save(new Paciente(dados));
 
+
 	}
 }
