@@ -7,7 +7,10 @@ public record DadosAtualizaPacientes(
 
 		@NotNull
 		Long id,
+
 		String nome,
+
 		String telefone,
+		
 		DadosEndereco endereco) {
 }
