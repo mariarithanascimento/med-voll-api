@@ -2,7 +2,7 @@
 
 Estamos trabalhando em um projeto de uma clínica médica fictícia. Temos uma empresa chamada Voll Med, que possui uma clínica que precisa de um aplicativo para monitorar o cadastro de médicos, pacientes e agendamento de consultas.
 
-O aplicativo possui algumas opções, em que a pessoa que o utiliza pode fazer o CRUD, tanto de médicos quanto de pacientes e realizar o agendamento e cancelamento das consultas
+O aplicativo possui algumas opções, em que a pessoa que o utiliza pode fazer o CRUD, tanto de médicos quanto de pacientes e realizar o agendamento e cancelamento das consultas.
 
 ## Técnologias utilizadas
 
