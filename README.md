@@ -1,6 +1,8 @@
 # Voll Med API
 
-Estamos trabalhando em um projeto de uma clínica médica fictícia. Temos uma empresa chamada Voll Med, que possui uma clínica que precisa de um aplicativo para monitorar o cadastro de médicos, pacientes e agendamento de consultas.
+Med Voll API é uma API REST criada com base na **arquitura MVC(model, view e controller)**.
+
+Nela o usuário pode monitorar o cadastro de médicos, pacientes e realizar o agendamento de consultas.
 
 O aplicativo possui algumas opções, em que a pessoa que o utiliza pode fazer o CRUD, tanto de médicos quanto de pacientes e realizar o agendamento e cancelamento das consultas.
 
