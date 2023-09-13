@@ -1,6 +1,6 @@
 # Voll Med API
 
-Med Voll API é uma API REST criada com base na **arquitura MVC(model, view e controller)**.
+Med Voll API é uma API REST criada com base na **arquitetura MVC(model, view e controller)**.
 
 Nela o usuário pode monitorar o cadastro de médicos, pacientes e realizar o agendamento de consultas.
 
