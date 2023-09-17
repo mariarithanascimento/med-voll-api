@@ -31,13 +31,14 @@ git clone https://github.com/mariarithanascimento/med-voll-api.git
 
 1.2 No diretório onde realizou a clonagem, abra a aplicação na IDE de sua preferência. No meu caso, usarei o Intellij (Versão 2023.1.4)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6226c44a-dfe7-4867-9ceb-24dc1055656b/79cae7aa-4422-477e-8eb0-068f8a64d914/Untitled.png)
+![open](https://github.com/mariarithanascimento/med-voll-api/assets/98103720/478cd896-b18c-406b-94e1-92319fd9d902)
 
 1. Lembrando que toda vez que executamos um projeto Maven, é necessário o download das dependências configuradas. 
 
 2.1 Geralmente as IDEAs já realizam o download assim que abre o projeto, porém pode ocorrer de não abrir. Para conferir: (Ícone Maven > api > Dependencies). Os grifados em azul, são as dependências do projeto.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6226c44a-dfe7-4867-9ceb-24dc1055656b/cd4f64e5-02eb-4f3a-930d-d3ec203a52a3/Untitled.png)
+![dependencias](https://github.com/mariarithanascimento/med-voll-api/assets/98103720/9412611e-7883-49ed-ae95-66642174d92e)
+
 
 1. Execução do projeto e testes
 
@@ -53,4 +54,5 @@ Após executar o programa, pode realizar os testes / requisições pelo Postman 
 
 ## Protótipo
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6226c44a-dfe7-4867-9ceb-24dc1055656b/7d171d23-f07c-4791-9176-8d9aeb3f4f12/Untitled.png)
+![Untitled](https://github.com/mariarithanascimento/med-voll-api/assets/98103720/1d8902b8-f3bf-4602-a435-b2704ead6483)
+
