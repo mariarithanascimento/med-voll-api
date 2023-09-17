@@ -40,7 +40,7 @@ git clone https://github.com/mariarithanascimento/med-voll-api.git
 ![dependencias](https://github.com/mariarithanascimento/med-voll-api/assets/98103720/9412611e-7883-49ed-ae95-66642174d92e)
 
 
-1. Execução do projeto e testes
+3. Execução do projeto e testes
 
 3.1 Download das collections:
 
