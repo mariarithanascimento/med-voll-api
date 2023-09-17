@@ -6,8 +6,6 @@ Nela o usuário pode monitorar o cadastro de médicos, pacientes e realizar o ag
 
 O aplicativo possui algumas opções, em que a pessoa que o utiliza pode fazer o CRUD, tanto de médicos quanto de pacientes e realizar o agendamento e cancelamento das consultas.
 
----
-
 ## **Tecnologias utilizadas**
 
 - Spring Boot 3
@@ -20,7 +18,6 @@ O aplicativo possui algumas opções, em que a pessoa que o utiliza pode fazer o
 - JUnit
 - Mockito
 
----
 
 ## Configuração
 
@@ -34,19 +31,20 @@ git clone https://github.com/mariarithanascimento/med-voll-api.git
 
 1.2 No diretório onde realizou a clonagem, abra a aplicação na IDE de sua preferência. No meu caso, usarei o Intellij (Versão 2023.1.4)
 
-![Untitled](Voll%20Med%20API%2060c6dfcc348b420d9a9a02e9530fe0a8/Untitled.png)
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6226c44a-dfe7-4867-9ceb-24dc1055656b/79cae7aa-4422-477e-8eb0-068f8a64d914/Untitled.png)
 
 1. Lembrando que toda vez que executamos um projeto Maven, é necessário o download das dependências configuradas. 
 
 2.1 Geralmente as IDEAs já realizam o download assim que abre o projeto, porém pode ocorrer de não abrir. Para conferir: (Ícone Maven > api > Dependencies). Os grifados em azul, são as dependências do projeto.
 
-![Untitled](Voll%20Med%20API%2060c6dfcc348b420d9a9a02e9530fe0a8/Untitled%201.png)
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6226c44a-dfe7-4867-9ceb-24dc1055656b/cd4f64e5-02eb-4f3a-930d-d3ec203a52a3/Untitled.png)
 
 1. Execução do projeto e testes
 
 3.1 Download das collections:
 
 [Medicos.postman_collection.json](..%2F..%2FUsers%2Fmaria%2FDownloads%2FMedicos.postman_collection.json)
+
 [Pacientes.postman_collection.json](..%2F..%2FUsers%2Fmaria%2FDownloads%2FPacientes.postman_collection.json)
 
 Após executar o programa, pode realizar os testes / requisições pelo Postman ou pela aplicação que preferir 😊
@@ -55,4 +53,4 @@ Após executar o programa, pode realizar os testes / requisições pelo Postman 
 
 ## Protótipo
 
-![Untitled](Voll%20Med%20API%2060c6dfcc348b420d9a9a02e9530fe0a8/Untitled%202.png)
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/6226c44a-dfe7-4867-9ceb-24dc1055656b/7d171d23-f07c-4791-9176-8d9aeb3f4f12/Untitled.png)
