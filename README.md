@@ -50,7 +50,6 @@ git clone https://github.com/mariarithanascimento/med-voll-api.git
 
 Após executar o programa, pode realizar os testes / requisições pelo Postman ou pela aplicação que preferir 😊
 
----
 
 ## Protótipo
 
