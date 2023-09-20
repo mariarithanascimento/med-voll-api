@@ -44,9 +44,9 @@ git clone https://github.com/mariarithanascimento/med-voll-api.git
 
 3.1 Download das collections:
 
-[Medicos.postman_collection.json](..%2F..%2FUsers%2Fmaria%2FDownloads%2FMedicos.postman_collection.json)
+<a href="/src/main/resources/collections/Medicos.postman_collection.json" download>Collection Médicos</a>
 
-[Pacientes.postman_collection.json](..%2F..%2FUsers%2Fmaria%2FDownloads%2FPacientes.postman_collection.json)
+<a href="/src/main/resources/collections/Pacientes.postman_collection" download>Collection Pecientes</a>
 
 Após executar o programa, pode realizar os testes / requisições pelo Postman ou pela aplicação que preferir 😊
 
