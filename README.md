@@ -11,7 +11,8 @@ O aplicativo possui algumas opções, em que a pessoa que o utiliza pode fazer o
 - Spring Boot 3
 - Java 17
 - Lombok
-- MySQL/Flyway
+- PL/SQL
+- Flyway
 - JPA/Hibernate
 - Maven
 - Postman
