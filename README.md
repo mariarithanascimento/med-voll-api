@@ -48,6 +48,8 @@ git clone https://github.com/mariarithanascimento/med-voll-api.git
 
 <a href="/src/main/resources/collections/Pacientes.postman_collection.json" download='Pacientes.postman_collection.json'>Collection Pecientes</a>
 
+![image](https://github.com/mariarithanascimento/med-voll-api/assets/98103720/4588e5cf-05be-4b52-b30a-ffd800b6c5aa)
+
 Após executar o programa, pode realizar os testes / requisições pelo Postman ou pela aplicação que preferir 😊
 
 
