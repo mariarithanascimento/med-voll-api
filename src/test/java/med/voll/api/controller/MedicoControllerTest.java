@@ -5,16 +5,24 @@ import med.voll.api.domain.endereco.DadosEndereco;
 import med.voll.api.domain.endereco.Endereco;
 import med.voll.api.domain.medicos.DadosCadastroMedico;
 import med.voll.api.domain.medicos.Especialidade;
+import med.voll.api.domain.medicos.Medico;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -28,24 +36,21 @@ public class MedicoControllerTest {
 
 	@BeforeEach
 	public void setUp() {
-		// Qualquer inicialização necessária antes dos testes
 	}
 
 	@Test
 	public void testCadastrarMedico() throws Exception {
-		// Crie um objeto de dados para o teste
+
 		DadosCadastroMedico dadosCadastroMedico = new DadosCadastroMedico(
-				"Pedro Howard",
-				"pedro@medvoll.com",
+				"Lucas Howard",
+				"lucas@medvoll.com",
 				"34999999999",
-				"222222",
+				"333333",
 				Especialidade.CARDIOLOGIA,
 				new DadosEndereco("rua 1", "bairro", "12345678", "Uberlandia", "MG", "complemento", "1"));
 
-		// Converte o objeto para JSON
 		String jsonDados = objectMapper.writeValueAsString(dadosCadastroMedico);
 
-		// Execute a requisição POST para cadastrar o médico
 		MvcResult result = mockMvc.perform(MockMvcRequestBuilders
 						.post("/medicos")
 						.contentType(MediaType.APPLICATION_JSON)
@@ -55,6 +60,21 @@ public class MedicoControllerTest {
 
 		String responseContent = result.getResponse().getContentAsString();
 
+	}
+
+	@Test
+	public void testListagemMedicos() throws Exception {
+		List<Medico> medicosGet = new ArrayList<>();
+
+		Page<Medico> pageMedicosGet = new PageImpl<>(medicosGet);
+
+		MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+						.get("/medicos")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andReturn();
+
+		String responseContent = result.getResponse().getContentAsString();
 	}
 }
 
