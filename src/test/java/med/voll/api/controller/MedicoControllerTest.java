@@ -1,60 +1,61 @@
 package med.voll.api.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import med.voll.api.domain.endereco.DadosEndereco;
-import med.voll.api.domain.medicos.DadosAtualizaMedico;
+import med.voll.api.domain.endereco.Endereco;
 import med.voll.api.domain.medicos.DadosCadastroMedico;
-import med.voll.api.domain.medicos.DadosDetalhamentoMedico;
-import med.voll.api.domain.medicos.DadosListagemMedico;
 import med.voll.api.domain.medicos.Especialidade;
-import med.voll.api.domain.medicos.Medico;
-import med.voll.api.domain.medicos.MedicoRepository;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.util.UriBuilder;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 public class MedicoControllerTest {
-	@InjectMocks
-	MedicoController controller;
 
-	@Mock
-	private MedicoRepository repository;
+	@Autowired
+	private MockMvc mockMvc;
 
-	MockMvc mockMvc;
-
-	private DadosAtualizaMedico dadosAtualizaMedico;
-	private DadosCadastroMedico dadosCadastroMedico;
-	private DadosDetalhamentoMedico dadosDetalhamentoMedico;
-	private DadosListagemMedico dadosListagemMedico;
-	private Especialidade especialidade;
-	private Medico medico;
-	private DadosEndereco dadosEndereco;
-	private UriBuilder uri;
-	private MockMultipartFile file;
+	@Autowired
+	private ObjectMapper objectMapper;
 
 	@BeforeEach
-	public void setup() {
-		mockMvc = MockMvcBuilders.standaloneSetup(controller)
-				.alwaysDo(print())
-				.build();
-		file = new MockMultipartFile(
-				"file",
-				"ControllerTest.text",
-				MediaType.TEXT_PLAIN_VALUE,
-				"This is a Controller Test".getBytes()
-		);
-		dadosCadastroMedico = new DadosCadastroMedico("Maria", "maria@medvoll.com", "11955667788", "111111", Especialidade.CARDIOLOGIA, dadosEndereco);
-		especialidade = Especialidade.CARDIOLOGIA;
-		dadosEndereco = new DadosEndereco("rua 1", "bairro", "12345678", "São Paulo", "SP", "complemento", "1");
+	public void setUp() {
+		// Qualquer inicialização necessária antes dos testes
+	}
+
+	@Test
+	public void testCadastrarMedico() throws Exception {
+		// Crie um objeto de dados para o teste
+		DadosCadastroMedico dadosCadastroMedico = new DadosCadastroMedico(
+				"Pedro Howard",
+				"pedro@medvoll.com",
+				"34999999999",
+				"222222",
+				Especialidade.CARDIOLOGIA,
+				new DadosEndereco("rua 1", "bairro", "12345678", "Uberlandia", "MG", "complemento", "1"));
+
+		// Converte o objeto para JSON
+		String jsonDados = objectMapper.writeValueAsString(dadosCadastroMedico);
+
+		// Execute a requisição POST para cadastrar o médico
+		MvcResult result = mockMvc.perform(MockMvcRequestBuilders
+						.post("/medicos")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(jsonDados))
+				.andExpect(MockMvcResultMatchers.status().isCreated())
+				.andReturn();
+
+		// Verifique se a resposta está correta, por exemplo, você pode verificar o corpo da resposta JSON
+		String responseContent = result.getResponse().getContentAsString();
+
 	}
 }
+
