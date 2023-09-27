@@ -53,7 +53,6 @@ public class MedicoControllerTest {
 				.andExpect(MockMvcResultMatchers.status().isCreated())
 				.andReturn();
 
-		// Verifique se a resposta está correta, por exemplo, você pode verificar o corpo da resposta JSON
 		String responseContent = result.getResponse().getContentAsString();
 
 	}
