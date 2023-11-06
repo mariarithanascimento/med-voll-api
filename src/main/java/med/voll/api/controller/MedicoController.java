@@ -30,6 +30,10 @@ public class MedicoController {
 	@Autowired
 	private MedicoRepository repository;
 
+	public MedicoController(MedicoRepository repository) {
+		this.repository = repository;
+	}
+
 	@PostMapping
 	@Transactional
 	public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedico dados, UriComponentsBuilder uriBuilder) {
