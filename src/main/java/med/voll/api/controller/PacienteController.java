@@ -30,6 +30,10 @@ public class PacienteController {
 	@Autowired
 	private PacienteRepository repository;
 
+	public PacienteController(PacienteRepository repository) {
+		this.repository = repository;
+	}
+
 	@PostMapping
 	@Transactional
 	public ResponseEntity cadastrarPacientes(@RequestBody @Valid DadosCadastroPaciente dados, UriComponentsBuilder uriBuilder) {
