@@ -34,6 +34,12 @@ public class PacienteController {
 		this.repository = repository;
 	}
 
+	@GetMapping
+	public ResponseEntity <Page<DadosListagemPaciente>> listagem(@PageableDefault(size = 5, sort = {"nome"}) Pageable paginacao) {
+		var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemPaciente::new);
+		return ResponseEntity.ok(page);
+	}
+
 	@PostMapping
 	@Transactional
 	public ResponseEntity cadastrarPacientes(@RequestBody @Valid DadosCadastroPaciente dados, UriComponentsBuilder uriBuilder) {
@@ -42,12 +48,6 @@ public class PacienteController {
 		var uri = uriBuilder.path("/pacientes/{id}").buildAndExpand(paciente.getId()).toUri();
 		return ResponseEntity.created(uri).body(new DadosDetalhamentoPaciente(paciente));
 
-	}
-
-	@GetMapping
-	public ResponseEntity <Page<DadosListagemPaciente>> listagem(@PageableDefault(size = 5, sort = {"nome"}) Pageable paginacao) {
-		var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemPaciente::new);
-		return ResponseEntity.ok(page);
 	}
 
 	@PutMapping
