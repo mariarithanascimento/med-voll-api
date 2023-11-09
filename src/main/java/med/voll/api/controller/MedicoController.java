@@ -31,6 +31,7 @@ public class MedicoController {
 	private MedicoRepository repository;
 
 	public MedicoController(MedicoRepository repository) {
+
 		this.repository = repository;
 	}
 

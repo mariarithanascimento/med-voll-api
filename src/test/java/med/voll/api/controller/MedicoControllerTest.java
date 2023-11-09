@@ -30,14 +30,35 @@ public class MedicoControllerTest {
 	}
 
 	@Test
+	public void testDetalharMedico() {
+		Long id = 1L;
+		Medico medico = new Medico();
+		when(medicoRepository.getReferenceById(id)).thenReturn(medico);
+
+		ResponseEntity result = medicoController.detalhar(id);
+
+		System.out.println("Teste Ok");
+
+		assertEquals(HttpStatus.OK, result.getStatusCode());
+	}
+
+	@Test
 	public void testCadastrarMedico() {
-		DadosCadastroMedico dados = new DadosCadastroMedico("Fernando Morais", "fernandomorais@medvoll.com", "34999999999", "555555",
+		DadosCadastroMedico dados = new DadosCadastroMedico(
+				"Fernando Morais",
+				"fernandomorais@medvoll.com",
+				"34999999999",
+				"555555",
 				Especialidade.CARDIOLOGIA,
 				new DadosEndereco("rua 1", "bairro", "12345678", "Uberlandia", "MG", "complemento", "1"));
+
 		Medico medico = new Medico();
+
 		when(medicoRepository.save(any(Medico.class))).thenReturn(medico);
 
 		ResponseEntity result = medicoController.cadastrar(dados, UriComponentsBuilder.newInstance());
+
+		System.out.println("Teste Ok");
 
 		assertEquals(HttpStatus.CREATED, result.getStatusCode());
 	}
@@ -50,18 +71,9 @@ public class MedicoControllerTest {
 
 		ResponseEntity result = medicoController.excluir(id);
 
+		System.out.println("Teste Ok");
+
 		assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
 	}
 
-	@Test
-	public void testDetalharMedico() {
-		Long id = 1L;
-		Medico medico = new Medico();
-		when(medicoRepository.getReferenceById(id)).thenReturn(medico);
-
-		ResponseEntity result = medicoController.detalhar(id);
-
-		assertEquals(HttpStatus.OK, result.getStatusCode());
-
-	}
 }
